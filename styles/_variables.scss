@@ -1,0 +1,49 @@
+$primary : #fff;
+$secondary : #9AACE3;
+$terciary : #739648;
+$orange : #E3856D;
+$brick : #965E50;
+$darkGray : rgb(42, 40, 44);
+
+
+
+@mixin flex($FD, $JC) {
+    display: flex;
+    justify-content: $JC;
+    align-items: center;
+    flex-direction: $FD;
+}
+
+@mixin responsive($breakpoint) {
+    @if $breakpoint == tablet {
+        @media only screen and (max-width: 768px) { @content };
+    }
+
+    @if $breakpoint == desktop {
+        @media only screen and (min-width: 769px) { @content };
+    }
+
+    @if $breakpoint == bigtablet {
+        @media only screen and (min-width: 850px) { @content };
+    }
+
+    @if $breakpoint == bigscreen {
+        @media only screen and (min-width: 1000px) { @content };
+    }
+}
+
+@keyframes fade-in {
+    from {
+        display: none;
+        opacity: 0;
+    }
+    1% {
+        display: block;
+        opacity: 0;
+    }
+    
+    to {
+        display: block;
+        opacity: 1;
+    }
+}
